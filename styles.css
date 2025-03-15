@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.container {
+    width: 90%; /* Adjust as needed */
+    max-width: 900px; /* Maximum width of the container */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 10px; /* Add some top margin for spacing */
+}
+
+textarea {
+    font-size: 25px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    min-height: 80px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 15px; /* Increased bottom margin for spacing */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the start */
+    gap: 10px; /* Spacing between buttons */
+    margin-bottom: 20px; /* Margin below buttons */
+}
+
+button {
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #5cb85c;
+    border: none;
+    cursor: pointer; /* Indicate button is clickable */
+}
+
+button:hover {
+    background-color: #449d44;
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+    cursor: default; /* Standard cursor for disabled button */
+}
+
+.progress-bar-container {
+    margin-bottom: 20px;
+}
+
+.progress-label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 20px;
+    background-color: #eee; /* Light grey background for progress bar track */
+}
+
+.progress-bar-fill {
+    background-color: #5cb85c;
+    height: 100%;
+    border-radius: 4px;
+    width: 0%; /* Initial width is 0 */
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+.output-area {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 10px;
+    min-height: 100px; /* Minimum height for output area */
+}
+
+.output-text {
+    font-size: 25px;
+    padding: 10px;
+    /* No border needed as output-area already has it */
+    /* border-radius: 4px; */ /* Already covered by output-area */
+    /* background-color: #fff; */ /* Already covered by output-area */
+    white-space: pre-line; /* Preserve line breaks from server */
+}
+
+.output-text p {
+    font-size: inherit; /* Inherit font size from .output-text */
+    margin-top: 0.5em; /* Adjust vertical spacing between paragraphs */
+    margin-bottom: 0.5em;
+}
+
+.output-text b { /* Style for bold terms */
+    font-weight: bold;
+}
+
+.output-text span[style*="color: green;"] { /* Example: Green for "Full match" */
+    color: green;
+}
+
+.output-text span[style*="color: orange;"] { /* Example: Orange for "Partial match" */
+    color: orange;
+}
+
+.output-text span[style*="color: blue;"] { /* Example: Blue for "Larger description" */
+    color: blue;
+}
+
+.output-text span[style*="color: red; text-decoration: line-through;"] { /* Example: Red strikethrough for "Deleted" */
+    color: red;
+    text-decoration: line-through;
+}
+
+.output-text span[style*="color: grey;"] { /* Example: Grey for "Cancelled" */
+    color: grey;
+}
+
+/* ADDED CSS RULE: Style for "Acceptable Specific Description" */
+.output-text span.acceptable-specific-description {
+    color: #27ae60; /* Choose a distinct color, e.g., a shade of green */
+    font-weight: bold; /* Make it bold to stand out */
+    font-style: italic; /* Optional: Italic style */
+}
+.result-term {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.deleted-description {
+    color: red;
+    text-decoration: line-through;
+}
+
+.vague-description {
+    color: #e67e22;
+}
+
+.wordy-description {
+    color: #3498db;
+    font-style: italic;
+}
+
+.acceptable-description {
+    color: green;
+    font-weight: bold; /* Make "Acceptable Description" bold */
+}
+
+.acceptable-specific-description {
+    font-weight: bold; /* Make "Acceptable Specific Description" bold */
+    color: #27ae60; /* A slightly different green */
+}
+
+.example-intro {
+    font-style: italic;
+    color: #777; /* Gray color for "For example:" */
+    margin-left: 20px; /* Indent example intro */
+    display: block; /* Ensure it's on a new line */
+    margin-top: 5px; /* Add some space above */
+}
+
+.example-description {
+    margin-left: 40px; /* Indent example description further */
+    display: block; /* Ensure it's on a new line */
+    margin-bottom: 5px; /* Add some space below */
+}
+
+.term-id {
+    font-size: 0.9em;
+    color: #555; /* Darker gray for Term ID */
+    font-style: italic;
+}
+
+.needs-review-description {
+    color: #9b59b6;
+}
+
+.cancelled-description {
+    color: grey;
+}
+
+.error-description {
+    color: red;
+}
+
+/* General result paragraph styling for better spacing */
+p[style*="font-size: 25px;"] { /* Target paragraphs with the base style */
+    margin-bottom: 10px; /* Add spacing between result paragraphs */
+    line-height: 1.4; /* Slightly increase line height for readability */
+}
+
+h2 {
+    margin-top: 20px; /* Add more space above headings */
+    margin-bottom: 10px; /* Add space below headings */
+    color: #333; /* Darken heading color */
+    border-bottom: 1px solid #eee; /* Add a subtle border under headings */
+    padding-bottom: 5px; /* Add padding below border */
+}
+
+ol {
+    margin-bottom: 20px; /* Add more space below ordered lists */
+}
+
+li {
+    margin-bottom: 5px; /* Add spacing between list items */
+}

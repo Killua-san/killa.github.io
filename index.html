@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USPTO Search Checker</title>
+    <link rel="stylesheet" href="static/styles.css"> </head>
+<body>
+    <div class="container">
+        <h1>USPTO Search Checker</h1>
+
+        <label for="searchTerms">Enter search terms (separated by semicolon):</label>
+        <textarea id="searchTerms" placeholder="Paste or type search terms here..."></textarea>
+        <div class="hint" id="hintLabel">Hint: Press Enter to search, Esc to cancel search, Ctrl+Enter for a new line.</div>
+
+        <div class="buttons">
+            <button id="searchButton">Search</button>
+            <button id="cancelButton" disabled>Cancel</button>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-label">Progress: <span id="progressPercent">0%</span></div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+        </div>
+
+        <div class="output-area">
+            <h2>Search Results:</h2>
+            <div id="output" class="output-text"></div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script> </body>
+</html>
